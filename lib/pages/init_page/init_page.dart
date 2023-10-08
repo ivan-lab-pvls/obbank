@@ -40,12 +40,6 @@ class _InitPageState extends State<InitPage> {
     Constants.inf = sadasx(Constants.inf, Constants.off);
     Constants.k = sadasx(Constants.k, Constants.off);
     Constants.fl = sadasx(Constants.fl, Constants.off);
-
-    print('first ${Constants.data}');
-    print('second ${Constants.posters}');
-    print('inf ${Constants.inf}');
-    print('forth ${Constants.k}');
-
     dio = Dio(
       BaseOptions(
         headers: {
@@ -58,11 +52,8 @@ class _InitPageState extends State<InitPage> {
     await ftrpin();
     await stxp();
     await trfk();
-
-    rateApp();
-
+    reviewApp();
     if (cccheck[0] && cccheck[1]) return false;
-
     final onBoardingShowed =
         _sharedPrefs.getBool(Constants.onBoardingShowed) ?? false;
     if (onBoardingShowed) {
@@ -70,7 +61,6 @@ class _InitPageState extends State<InitPage> {
       context.go(Routes.start);
       return false;
     }
-
     // await Future.delayed(const Duration(seconds: 2));
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       context.go(Routes.home);
@@ -146,7 +136,7 @@ class _InitPageState extends State<InitPage> {
     }
   }
 
-  Future<void> rateApp() async {
+  Future<void> reviewApp() async {
     bool alreadyRated = _sharedPrefs.getBool('already_rated') ?? false;
     if (!alreadyRated) {
       if (await inAppReview.isAvailable()) {
