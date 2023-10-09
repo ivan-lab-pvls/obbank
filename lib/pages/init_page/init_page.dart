@@ -7,7 +7,7 @@ import 'package:bank/constants.dart';
 import 'package:bank/router.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+// import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:go_router/go_router.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:provider/provider.dart';
@@ -208,14 +208,14 @@ class OScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: InAppWebView(
-          initialUrlRequest: URLRequest(
-            url: Uri.parse(s),
-          ),
-        ),
-      ),
+      // body: SafeArea(
+      //   bottom: false,
+      //   // child: InAppWebView(
+      //   //   initialUrlRequest: URLRequest(
+      //   //     url: Uri.parse(s),
+      //   //   ),
+      //   // ),
+      // ),
     );
   }
 }
